@@ -1,4 +1,4 @@
-from ..rabbits.rabbits import pairs
+from rabbits import pairs
 
 TEST_DATA = [1, 2, 3, 4, 6, 89, 1234, 22, 2, 7, 1, 0]
 
