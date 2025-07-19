@@ -18,13 +18,22 @@ class RabbitPair:
 class RabbitPool:
     def __init__(self):
         self.pairs = [RabbitPair(self)]
-        self.months = 0
     
     def progress(self):
-        self.months += 1
         for pair in self.pairs:
             pair.progress()
     
     def N(self):
         return len(self.pairs)
+    
+    def age(self):
+        return self.pairs[0].months
+    
+
+
+if __name__ == '__main__':
+    pool = RabbitPool()
+    for n in range(12):
+        print(n, pool.age(), pool.N())
+        pool.progress()
 
