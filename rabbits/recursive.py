@@ -1,6 +1,5 @@
-# TODO: DRY
+from .constants import MATURITY
 
-MATURITY = 3 
 CACHE = [1] * MATURITY
 
 def pairs(months: int) -> int:

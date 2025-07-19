@@ -1,4 +1,4 @@
-MATURITY = 3
+from .constants import MATURITY
 
 
 class RabbitPair:
