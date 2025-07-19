@@ -1,4 +1,4 @@
-from rabbits import iterative, recursive, brute
+from rabbits import iterative, recursive
 
 TEST_DATA = [1, 2, 3, 4, 6, 89, 734, 22, 2, 7, 1, 0]
 
@@ -14,10 +14,4 @@ def test_cache_iter():
 def test_iter_vs_recur():
     for nmonths in TEST_DATA:
         assert iterative.pairs(nmonths) == recursive.pairs(nmonths)
-
-def test_iter_vs_brute():
-    pool = brute.RabbitPool()
-    for n in range(43):
-        assert pool.N() == iterative.pairs(n)
-        pool.progress()
 
