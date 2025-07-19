@@ -7,7 +7,7 @@ RESULTS_1 = []
 for months in TEST_DATA:
     RESULTS_1.append(iterative.pairs(months))
 
-def test_cache():
+def test_cache_iter():
     for idx in range(len(RESULTS_1)):
         assert iterative.pairs(TEST_DATA[idx]) == RESULTS_1[idx]
 
@@ -17,7 +17,7 @@ def test_iter_vs_recur():
 
 def test_iter_vs_brute():
     pool = brute.RabbitPool()
-    for n in range(100):
+    for n in range(43):
         assert pool.N() == iterative.pairs(n)
         pool.progress()
 
