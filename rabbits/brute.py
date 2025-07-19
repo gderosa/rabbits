@@ -36,4 +36,5 @@ if __name__ == '__main__':
     for n in range(12):
         print(n, pool.age(), pool.N())
         pool.progress()
+        print(n, pool.age(), pool.N())
 
