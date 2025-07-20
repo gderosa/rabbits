@@ -1,4 +1,16 @@
+'''
+Brute force approach. No analytical formula is used to predict the population.
+Rather, at each "reproduction", a new object is literally created, and appended to a "pool"
+i.e. a list if which we simply take the length.
+
+Terrible performance but "it simply implements the problem", directly.
+Can be used to compare with more analytical methods.
+'''
+
 from .constants import MATURITY
+
+# Obtained empirically: beyond this, on a recent laptop (2023~2025), performance is less practical
+MAX_MONTHS = 43
 
 
 class RabbitPair:
@@ -31,17 +43,4 @@ class RabbitPool:
     
     def age(self):
         return self.pairs[0].months
-    
-
-
-if __name__ == '__main__':
-    MAX_MONTHS = 43
-    TRUNCATE_AT = 29
-    print(f"Rabbit pair ages, truncating at {TRUNCATE_AT} rabbit pairs:")
-    pool = RabbitPool()
-    print([ pair.months for pair in pool.pairs ])
-    for _ in range(MAX_MONTHS):
-        pool.progress()
-        print([ pair.months for pair in pool.pairs[:TRUNCATE_AT] ])
-        
 

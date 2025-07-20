@@ -1,11 +1,8 @@
 from rabbits import iterative, brute
 
-# Experimenting on a reasonably modern laptop, this is the maxium without getting unreasonably slow...
-MAX_MONTHS = 39
-
 def test_iter_vs_brute():
     pool = brute.RabbitPool()
-    for n in range(MAX_MONTHS):
+    for n in range(brute.MAX_MONTHS):
         assert pool.N() == iterative.pairs(n)
         pool.progress()
 
